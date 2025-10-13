@@ -10,6 +10,8 @@ import {Button} from 'primeng/button';
 import { PostsTableComponent } from './views/posts-table/posts-table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GraphQLModule } from './graphql.module';
+import { TableModule } from 'primeng/table';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { GraphQLModule } from './graphql.module';
     AppRoutingModule,
     Button,
     HttpClientModule,
-    GraphQLModule
+    GraphQLModule,
+    TableModule,
+    ProgressSpinnerModule
   ],
   providers: [
     provideAnimationsAsync(),

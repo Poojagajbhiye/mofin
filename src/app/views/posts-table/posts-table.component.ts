@@ -24,6 +24,9 @@ const query = gql `
 })
 export class PostsTableComponent implements OnInit {
 
+  posts: {id: string, title: string, views: number}[] = [];
+  loading: boolean = false;
+
   constructor(private http: HttpClient, private apollo: Apollo) {}
 
   ngOnInit(): void {
@@ -36,6 +39,8 @@ export class PostsTableComponent implements OnInit {
       query: query
     }).valueChanges.subscribe((data: any) => {
       console.log("DATA", data.data);
+      this.posts = [...(data.data?.allPosts ?? [])]
+      this.loading = data.loading;
       console.log("ERR", data.error);
       console.log("Loading", data.loading);
     });
