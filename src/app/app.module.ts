@@ -9,6 +9,7 @@ import Aura from '@primeng/themes/aura';
 import {Button} from 'primeng/button';
 import { PostsTableComponent } from './views/posts-table/posts-table.component';
 import { HttpClientModule } from '@angular/common/http';
+import { GraphQLModule } from './graphql.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     Button,
-    HttpClientModule
+    HttpClientModule,
+    GraphQLModule
   ],
   providers: [
     provideAnimationsAsync(),
