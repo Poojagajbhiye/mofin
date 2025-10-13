@@ -7,15 +7,19 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
 import {Button} from 'primeng/button';
+import { PostsTableComponent } from './views/posts-table/posts-table.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PostsTableComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    Button
+    Button,
+    HttpClientModule
   ],
   providers: [
     provideAnimationsAsync(),
