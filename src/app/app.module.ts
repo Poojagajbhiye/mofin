@@ -12,11 +12,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { GraphQLModule } from './graphql.module';
 import { TableModule } from 'primeng/table';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { PostFormComponent } from './views/post-form/post-form.component';
+import { FloatLabelModule } from 'primeng/floatlabel';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostsTableComponent
+    PostsTableComponent,
+    PostFormComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +33,12 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     HttpClientModule,
     GraphQLModule,
     TableModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    ToastModule,
+    InputTextModule,
+    InputNumberModule,
+    FloatLabelModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideAnimationsAsync(),
@@ -33,7 +46,8 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
           theme: {
               preset: Aura
           }
-      })
+      }),
+    MessageService,
   ],
   bootstrap: [AppComponent]
 })
